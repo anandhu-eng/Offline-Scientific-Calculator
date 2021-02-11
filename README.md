@@ -14,13 +14,13 @@ Aim:
   
 Working operations:
   
-    addition
-    subtraction
-    multiplication
-    division
-    equals
-    clear
-    decimal
+    Addition
+    Subtraction
+    Multiplication
+    Division
+    Equals
+    Clear
+    Decimal
   
 Operations newly added/ under experimental stage:
 

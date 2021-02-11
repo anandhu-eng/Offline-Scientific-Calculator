@@ -14,6 +14,18 @@ Aim:
   
 Working operations:
   
-  None
+  addition
+  subtraction
+  multiplication
+  division
+  equals
+  clear
+  decimal
+  
+Operations newly added/ under experimental stage:
+
+  sin
+  cos
+  tan
   
 last updated on: 30-12-2020

@@ -79,27 +79,6 @@ def button_divide():
     f_num = float(fisrt_number)
     e.delete(0, END)
 
-#to create a second window
-# def second():
-#     def sin():
-#         ans = float(a.get())
-#         print(type(ans))
-#         if switch is True:
-#             ans = math.sin(math.radians(ans))
-#             print(type(ans))
-#         else:
-#             ans = math.sin(ans)
-#         #e.delete(0, END)
-#         ans=str(ans)
-#         e.insert(0, ans)
-
-#     win2=Tk()
-#     win2.title("trigonometric operations")
-#     a=Entry(win2,width=47,borderwidth=4)
-#     a.grid(row=0,column=0)
-#     ok=Button(win2,text="OK",command=sin)
-#     ok.grid(row=0,column=1)
-#     win2.mainloop()
 
 switch=True
 def sin():

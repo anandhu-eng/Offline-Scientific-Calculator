@@ -104,7 +104,7 @@ def button_divide():
 switch=True
 def sin():
     try:
-        ans = float(a.get())
+        ans = float(e.get())
         if switch is True:
             ans = math.sin(math.radians(ans))
         else:
@@ -112,7 +112,7 @@ def sin():
         e.delete(0, END)
         e.insert(0, str(ans))
     except Exception:
-       tkinter.messagebox.showerror("Value Error", "Check your values and operators")
+        tkinter.messagebox.showerror("Value Error", "Check your values and operators")
 
 def cos():
     try:
@@ -148,7 +148,7 @@ def arcsin():
         e.delete(0, END)
         e.insert(0, str(ans))
     except Exception:
-        tkinter.messagebox.showerror("Value Error", "Check your values and operators")
+        tkinter.messagebox.showerror("Value Error", "Check your values and limits")
 
 def arccos():
     try:
@@ -160,7 +160,7 @@ def arccos():
         e.delete(0, END)
         e.insert(0, str(ans))
     except Exception:
-        tkinter.messagebox.showerror("Value Error", "Check your values and operators")
+        tkinter.messagebox.showerror("Value Error", "Check your values and limits")
 
 def arctan():
     try:
@@ -169,6 +169,15 @@ def arctan():
             ans = math.degrees(math.atan(ans))
         else:
             ans = math.atan(ans)
+        e.delete(0, END)
+        e.insert(0, str(ans))
+    except Exception:
+        tkinter.messagebox.showerror("Value Error", "Check your values and limits")
+
+def log():
+    try:
+        ans = float(e.get())
+        ans = math.log10(ans)
         e.delete(0, END)
         e.insert(0, str(ans))
     except Exception:
@@ -205,6 +214,10 @@ button_add = Button(window, text="+", padx=18, pady=10, command=button_add)
 button_tan=Button(window, text="tan", padx=14, pady=10,command=tan)
 button_cos=Button(window, text="cos", padx=14, pady=10,command=cos)
 button_sin=Button(window, text="sin", padx=14, pady=10,command=sin)
+button_arcsin=Button(window, text="arcsin", padx=14, pady=10,command=arcsin)
+button_arccos=Button(window, text="arccos", padx=14, pady=10,command=arccos)
+button_arctan=Button(window, text="arctan", padx=14, pady=10,command=arctan)
+button_log=Button(window, text="log", padx=21, pady=10,command=log)
 
 
 
@@ -237,7 +250,10 @@ button_dot.grid(row=5, column=0)
 button_tan.grid(row=1,column=0)
 button_sin.grid(row=1,column=1)
 button_cos.grid(row=1,column=2)
-
+button_arcsin.grid(row=1,column=4)
+button_arccos.grid(row=2,column=4)
+button_arctan.grid(row=3,column=4)
+button_log.grid(row=4, column=4)
 
 
 

@@ -27,6 +27,7 @@ Working operations:
     Arcsin
     Arccos
     Arctan
+    Log
   
 Operations newly added/ under experimental stage:
 

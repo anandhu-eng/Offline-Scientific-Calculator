@@ -24,11 +24,12 @@ Working operations:
     Sin
     Cos
     Tan
+    Arcsin
+    Arccos
+    Arctan
   
 Operations newly added/ under experimental stage:
 
-    arcsin
-    arccos
-    arctan
+    None
   
 last updated on: 30-12-2020

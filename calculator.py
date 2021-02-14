@@ -1,7 +1,12 @@
-from tkinter import *
+from tkinter import * 
+import math
+import parser
+import tkinter.messagebox
 
 window = Tk()
-window.title("Calculator")
+window.title("Scientific Calculator")
+#window should not be rezisable
+window.resizable(width=False,height=False)
 
 #iconphoto
 photo = PhotoImage(file="calacimg.png")
@@ -17,15 +22,21 @@ def button_click(number):
     current_val = e.get()
     e.delete(0, END)
     e.insert(0, str(current_val) + str(number))
+    return
 
 def button_clear():
     e.delete(0,END)
+    return
+
+def bksp():
+    current=e.get()
+    e.delete(len(current)-1,END)
 
 def button_add():
     fisrt_number = e.get()
     global f_num
-    global math
-    math = "Addition"
+    global maths
+    maths = "Addition"
     f_num = float(fisrt_number)
     e.delete(0, END)
 
@@ -33,13 +44,13 @@ def button_equal():
     second_number = e.get()
     e.delete(0, END)
 
-    if math == "Addition":
+    if maths == "Addition":
         e.insert(0, f_num + float(second_number))
-    if math == "Multiplication":
+    if maths == "Multiplication":
         e.insert(0, f_num * float(second_number))
-    if math == "Division":
+    if maths == "Division":
         e.insert(0, f_num / float(second_number))
-    if math == "Substraction":
+    if maths == "Substraction":
         e.insert(0, f_num - float(second_number))
 
 
@@ -47,26 +58,121 @@ def button_equal():
 def button_substract():
     fisrt_number = e.get()
     global f_num
-    global math
-    math = "Substraction"
+    global maths
+    maths = "Substraction"
     f_num = float(fisrt_number)
     e.delete(0, END)
 
 def button_multiply():
     fisrt_number = e.get()
     global f_num
-    global math
-    math = "Multiplication"
+    global maths
+    maths = "Multiplication"
     f_num = float(fisrt_number)
     e.delete(0, END)
 
 def button_divide():
     fisrt_number = e.get()
     global f_num
-    global math
-    math = "Division"
+    global maths
+    maths = "Division"
     f_num = float(fisrt_number)
     e.delete(0, END)
+
+#to create a second window
+# def second():
+#     def sin():
+#         ans = float(a.get())
+#         print(type(ans))
+#         if switch is True:
+#             ans = math.sin(math.radians(ans))
+#             print(type(ans))
+#         else:
+#             ans = math.sin(ans)
+#         #e.delete(0, END)
+#         ans=str(ans)
+#         e.insert(0, ans)
+
+#     win2=Tk()
+#     win2.title("trigonometric operations")
+#     a=Entry(win2,width=47,borderwidth=4)
+#     a.grid(row=0,column=0)
+#     ok=Button(win2,text="OK",command=sin)
+#     ok.grid(row=0,column=1)
+#     win2.mainloop()
+
+switch=True
+def sin():
+    try:
+        ans = float(a.get())
+        if switch is True:
+            ans = math.sin(math.radians(ans))
+        else:
+            ans = math.sin(ans)
+        e.delete(0, END)
+        e.insert(0, str(ans))
+    except Exception:
+       tkinter.messagebox.showerror("Value Error", "Check your values and operators")
+
+def cos():
+    try:
+        ans = float(e.get())
+        if switch is True:
+            ans = math.cos(math.radians(ans))
+        else:
+            ans = math.cos(ans)
+        e.delete(0, END)
+        e.insert(0, str(ans))
+    except Exception:
+        tkinter.messagebox.showerror("Value Error", "Check your values and operators")
+
+def tan():
+    try:
+        ans = float(e.get())
+        if switch is True:
+            ans = math.tan(math.radians(ans))
+        else:
+            ans = math.tan(ans)
+        e.delete(0, END)
+        e.insert(0, str(ans))
+    except Exception:
+        tkinter.messagebox.showerror("Value Error", "Check your values and operators")
+
+def arcsin():
+    try:
+        ans = float(e.get())
+        if switch is True:
+            ans = math.degrees(math.asin(ans))
+        else:
+            ans = math.asin(ans)
+        e.delete(0, END)
+        e.insert(0, str(ans))
+    except Exception:
+        tkinter.messagebox.showerror("Value Error", "Check your values and operators")
+
+def arccos():
+    try:
+        ans = float(e.get())
+        if switch is True:
+            ans = math.degrees(math.acos(ans))
+        else:
+            ans = math.acos(ans)
+        e.delete(0, END)
+        e.insert(0, str(ans))
+    except Exception:
+        tkinter.messagebox.showerror("Value Error", "Check your values and operators")
+
+def arctan():
+    try:
+        ans = float(e.get())
+        if switch is True:
+            ans = math.degrees(math.atan(ans))
+        else:
+            ans = math.atan(ans)
+        e.delete(0, END)
+        e.insert(0, str(ans))
+    except Exception:
+        tkinter.messagebox.showerror("Value Error", "Check your values and operators")
 
 
 
@@ -96,9 +202,9 @@ button_multiply = Button(window, text="X", padx=19, pady=10, command=button_mult
 button_substract = Button(window, text="-", padx=20, pady=10, command=button_substract)
 button_add = Button(window, text="+", padx=18, pady=10, command=button_add)
 
-button_tan=Button(window, text="tan", padx=14, pady=10)
-button_cos=Button(window, text="cos", padx=14, pady=10)
-button_sin=Button(window, text="sin", padx=14, pady=10)
+button_tan=Button(window, text="tan", padx=14, pady=10,command=tan)
+button_cos=Button(window, text="cos", padx=14, pady=10,command=cos)
+button_sin=Button(window, text="sin", padx=14, pady=10,command=sin)
 
 
 

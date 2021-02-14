@@ -21,11 +21,14 @@ Working operations:
     Equals
     Clear
     Decimal
+    Sin
+    Cos
+    Tan
   
 Operations newly added/ under experimental stage:
 
-    sin
-    cos
-    tan
+    arcsin
+    arccos
+    arctan
   
 last updated on: 30-12-2020
